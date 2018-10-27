@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+        body {
+            /*background: url("http://subsites.chinadaily.com.cn/SouthChinaSea/att/20160727/1469585132189091421.jpg");*/
+        }
+        #demo, #demo1{
+            width: 512px;
+            height: 512px;
+        }
+    </style>
+    <script>
+      function listenHotKey(key, action) {
+        window.addEventListener('keypress', e=>{
+          if(e.key === key){
+            action()
+          }
+        })
+      }
+    </script>
+</head>
+<body>
+<!--<script src="https://unpkg.com/mathjs@5.1.2/dist/math.min.js"></script>-->
+<!--<div id="panel"></div>-->
+<!--<div id="container" style="width: 700px;height: 700px"></div>-->
+<!--<script src="https://webapi.amap.com/maps?v=1.4.10&key=e15e343ed5f952efd7899005dc60900f"></script>-->
+<!--<script type="text/javascript">-->
+  <!--var map = new AMap.Map('container', {-->
+    <!--resizeEnable: true,-->
+    <!--center: [116.397428, 39.90923],//地图中心点-->
+    <!--zoom: 13 //地图显示的缩放级别-->
+  <!--});-->
+
+  <!--AMapUI.loadUI(['misc/MarkerList'], function(MarkerList) {-->
+    <!--//启动页面-->
+    <!--initPage(MarkerList);-->
+  <!--});-->
+
+  <!--function initPage (MarkerList) {-->
+
+  <!--}-->
+
+  <!--AMap.plugin('AMap.Driving', function () {-->
+    <!--var driving = new AMap.Driving({-->
+      <!--map: map,-->
+      <!--panel: "panel"-->
+    <!--});-->
+
+    <!--var startLngLat = [116.379028, 39.865042]-->
+    <!--var endLngLat = [116.427281, 39.903719]-->
+
+    <!--driving.search(startLngLat, endLngLat, function (status, result) {-->
+      <!--// 未出错时，result即是对应的路线规划方案-->
+    <!--})-->
+  <!--})-->
+<!--</script>-->
+
+<div id="root"></div>
+<canvas id="demo" width="1024" height="1024"></canvas>
+<canvas style="margin-left: 383px;" id="demo1" width="1024" height="1024"></canvas>
+<!--<script src="canvas1.js"></script>-->
+<script src="./grid-test.js"></script>
+<!--<script src="index.js"></script>-->
+<!--<script src="norm.js"></script>-->
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "name": "amap-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel ./src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "animated": "^0.2.2",
+    "babel-polyfill": "^6.26.0",
+    "normalizr": "^3.2.4",
+    "react": "^16.4.2",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-amap-binding": "^0.0.22",
+    "react-dom": "^16.4.2",
+    "react-motion": "^0.5.2",
+    "react-redux": "^5.0.7",
+    "react-transition-group": "^2.5.0",
+    "redux": "^4.0.0",
+    "reselect": "^3.0.1",
+    "velocity-react": "^1.4.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.0.0-0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.1.2",
+    "@types/react-motion": "^0.0.27",
+    "@types/reselect": "^2.2.0",
+    "babel-loader": "^8.0.2",
+    "babel-plugin-react-transform": "^3.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1"
+  }
+}

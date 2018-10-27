@@ -1,0 +1,563 @@
+{
+  "size": 6,
+  "data": [
+  {
+    "moduleId": 1,
+    "moduleName": "综合展示",
+    "parentId": 0,
+    "moduleType": "page",
+    "typeCode": null,
+    "unit": null,
+    "children": [
+      {
+        "moduleId": 7,
+        "moduleName": "常规指标",
+        "parentId": 1,
+        "moduleType": "block",
+        "typeCode": null,
+        "unit": null,
+        "children": [
+          {
+            "moduleId": 8,
+            "moduleName": "公交线路总数",
+            "parentId": 7,
+            "moduleType": "target",
+            "typeCode": "110001",
+            "unit": "条",
+            "children": null,
+            "show": true
+          },
+          {
+            "moduleId": 9,
+            "moduleName": "公交站点总数",
+            "parentId": 7,
+            "moduleType": "target",
+            "typeCode": "120001",
+            "unit": "个",
+            "children": null,
+            "show": true
+          },
+          {
+            "moduleId": 10,
+            "moduleName": "公交线路长度",
+            "parentId": 7,
+            "moduleType": "target",
+            "typeCode": "111001",
+            "unit": "公里",
+            "children": null,
+            "show": true
+          }
+        ],
+        "show": true
+      },
+      {
+        "moduleId": 11,
+        "moduleName": "覆盖指标",
+        "parentId": 1,
+        "moduleType": "block",
+        "typeCode": null,
+        "unit": null,
+        "children": [
+          {
+            "moduleId": 12,
+            "moduleName": "城区面积",
+            "parentId": 11,
+            "moduleType": "target",
+            "typeCode": "140001",
+            "unit": "平方公里",
+            "children": null,
+            "show": true
+          },
+          {
+            "moduleId": 13,
+            "moduleName": "300米站点覆盖面积",
+            "parentId": 11,
+            "moduleType": "target",
+            "typeCode": "121007",
+            "unit": "平方公里",
+            "children": null,
+            "show": true
+          },
+          {
+            "moduleId": 14,
+            "moduleName": "500米站点覆盖面积",
+            "parentId": 11,
+            "moduleType": "target",
+            "typeCode": "121008",
+            "unit": "平方公里",
+            "children": null,
+            "show": true
+          },
+          {
+            "moduleId": 15,
+            "moduleName": "300米站点覆盖率",
+            "parentId": 11,
+            "moduleType": "pie",
+            "typeCode": "121001",
+            "unit": "%",
+            "children": null,
+            "show": true
+          },
+          {
+            "moduleId": 16,
+            "moduleName": "500米站点覆盖率",
+            "parentId": 11,
+            "moduleType": "pie",
+            "typeCode": "121002",
+            "unit": "%",
+            "children": null,
+            "show": true
+          }
+        ],
+        "show": true
+      },
+      {
+        "moduleId": 17,
+        "moduleName": "公交服务能力",
+        "parentId": 1,
+        "moduleType": "block",
+        "typeCode": null,
+        "unit": null,
+        "children": [
+          {
+            "moduleId": 18,
+            "moduleName": "公交服务能力列表",
+            "parentId": 17,
+            "moduleType": "list",
+            "typeCode": null,
+            "unit": null,
+            "children": null,
+            "show": true
+          },
+          {
+            "moduleId": 19,
+            "moduleName": "公交服务能力饼图",
+            "parentId": 17,
+            "moduleType": "pie",
+            "typeCode": null,
+            "unit": null,
+            "children": null,
+            "show": true
+          }
+        ],
+        "show": true
+      },
+      {
+        "moduleId": 20,
+        "moduleName": "实时指标",
+        "parentId": 1,
+        "moduleType": "block",
+        "typeCode": null,
+        "unit": null,
+        "children": [
+          {
+            "moduleId": 21,
+            "moduleName": "在册车辆总数",
+            "parentId": 20,
+            "moduleType": "target",
+            "typeCode": "230002",
+            "unit": "辆",
+            "children": null,
+            "show": true
+          },
+          {
+            "moduleId": 22,
+            "moduleName": "在线车辆总数",
+            "parentId": 20,
+            "moduleType": "target",
+            "typeCode": "230001",
+            "unit": "辆",
+            "children": null,
+            "show": true
+          },
+          {
+            "moduleId": 23,
+            "moduleName": "运营总里程",
+            "parentId": 20,
+            "moduleType": "target",
+            "typeCode": "231001",
+            "unit": "公里",
+            "children": null,
+            "show": true
+          },
+          {
+            "moduleId": 24,
+            "moduleName": "已完成班次",
+            "parentId": 20,
+            "moduleType": "target",
+            "typeCode": "233001",
+            "unit": "次",
+            "children": null,
+            "show": true
+          },
+          {
+            "moduleId": 25,
+            "moduleName": "当日交易笔数",
+            "parentId": 20,
+            "moduleType": "target",
+            "typeCode": null,
+            "unit": "笔",
+            "children": null,
+            "show": false
+          },
+          {
+            "moduleId": 26,
+            "moduleName": "本周交易笔数",
+            "parentId": 20,
+            "moduleType": "target",
+            "typeCode": null,
+            "unit": "笔",
+            "children": null,
+            "show": false
+          },
+          {
+            "moduleId": 27,
+            "moduleName": "本月交易笔数",
+            "parentId": 20,
+            "moduleType": "target",
+            "typeCode": null,
+            "unit": "笔",
+            "children": null,
+            "show": false
+          }
+        ],
+        "show": true
+      }
+    ],
+    "show": true
+  },
+  {
+    "moduleId": 2,
+    "moduleName": "站点覆盖",
+    "parentId": 0,
+    "moduleType": "page",
+    "typeCode": null,
+    "unit": null,
+    "children": [
+      {
+        "moduleId": 28,
+        "moduleName": "站点覆盖率",
+        "parentId": 2,
+        "moduleType": "block",
+        "typeCode": null,
+        "unit": null,
+        "children": [
+          {
+            "moduleId": 29,
+            "moduleName": "300米站点覆盖率",
+            "parentId": 28,
+            "moduleType": "pie",
+            "typeCode": "121001",
+            "unit": "%",
+            "children": null,
+            "show": true
+          },
+          {
+            "moduleId": 30,
+            "moduleName": "500米站点覆盖率",
+            "parentId": 28,
+            "moduleType": "pie",
+            "typeCode": "121002",
+            "unit": "%",
+            "children": null,
+            "show": true
+          }
+        ],
+        "show": true
+      },
+      {
+        "moduleId": 31,
+        "moduleName": "站点指标",
+        "parentId": 2,
+        "moduleType": "block",
+        "typeCode": null,
+        "unit": null,
+        "children": [
+          {
+            "moduleId": 32,
+            "moduleName": "公交站点总数",
+            "parentId": 31,
+            "moduleType": "target",
+            "typeCode": "120001",
+            "unit": "个",
+            "children": null,
+            "show": true
+          },
+          {
+            "moduleId": 33,
+            "moduleName": "站点300米覆盖面积",
+            "parentId": 31,
+            "moduleType": "target",
+            "typeCode": "121007",
+            "unit": "平方公里",
+            "children": null,
+            "show": true
+          },
+          {
+            "moduleId": 34,
+            "moduleName": "站点500米覆盖面积",
+            "parentId": 31,
+            "moduleType": "target",
+            "typeCode": "121008",
+            "unit": "平方公里",
+            "children": null,
+            "show": true
+          }
+        ],
+        "show": true
+      }
+    ],
+    "show": true
+  },
+  {
+    "moduleId": 3,
+    "moduleName": "线网指标",
+    "parentId": 0,
+    "moduleType": "page",
+    "typeCode": null,
+    "unit": null,
+    "children": [
+      {
+        "moduleId": 35,
+        "moduleName": "线路指标",
+        "parentId": 3,
+        "moduleType": "block",
+        "typeCode": null,
+        "unit": null,
+        "children": [
+          {
+            "moduleId": 36,
+            "moduleName": "公交线路总数",
+            "parentId": 35,
+            "moduleType": "target",
+            "typeCode": "110001",
+            "unit": "条",
+            "children": null,
+            "show": true
+          },
+          {
+            "moduleId": 37,
+            "moduleName": "公交线路总长度",
+            "parentId": 35,
+            "moduleType": "target",
+            "typeCode": "111001",
+            "unit": "公里",
+            "children": null,
+            "show": true
+          },
+          {
+            "moduleId": 38,
+            "moduleName": "公交线网长度",
+            "parentId": 35,
+            "moduleType": "target",
+            "typeCode": "111002",
+            "unit": "公里",
+            "children": null,
+            "show": true
+          }
+        ],
+        "show": true
+      }
+    ],
+    "show": true
+  },
+  {
+    "moduleId": 4,
+    "moduleName": "速度分析",
+    "parentId": 0,
+    "moduleType": "page",
+    "typeCode": null,
+    "unit": null,
+    "children": [
+      {
+        "moduleId": 39,
+        "moduleName": "速度指标",
+        "parentId": 4,
+        "moduleType": "block",
+        "typeCode": null,
+        "unit": null,
+        "children": [
+          {
+            "moduleId": 40,
+            "moduleName": "早高峰运送速度",
+            "parentId": 39,
+            "moduleType": "target",
+            "typeCode": "232002",
+            "unit": "公里/小时",
+            "children": null,
+            "show": true
+          },
+          {
+            "moduleId": 41,
+            "moduleName": "晚高峰运送速度",
+            "parentId": 39,
+            "moduleType": "target",
+            "typeCode": "232003",
+            "unit": "公里/小时",
+            "children": null,
+            "show": true
+          }
+        ],
+        "show": true
+      },
+      {
+        "moduleId": 42,
+        "moduleName": "平均速度列表",
+        "parentId": 4,
+        "moduleType": "block",
+        "typeCode": null,
+        "unit": null,
+        "children": [
+          {
+            "moduleId": 43,
+            "moduleName": "平均运送速度",
+            "parentId": 42,
+            "moduleType": "line",
+            "typeCode": "232001",
+            "unit": "公里/小时",
+            "children": null,
+            "show": true
+          }
+        ],
+        "show": true
+      }
+    ],
+    "show": true
+  },
+  {
+    "moduleId": 5,
+    "moduleName": "运力分析",
+    "parentId": 0,
+    "moduleType": "page",
+    "typeCode": null,
+    "unit": null,
+    "children": [
+      {
+        "moduleId": 44,
+        "moduleName": "运力排名",
+        "parentId": 5,
+        "moduleType": "block",
+        "typeCode": null,
+        "unit": null,
+        "children": [
+          {
+            "moduleId": 45,
+            "moduleName": "当天站点运力排名",
+            "parentId": 44,
+            "moduleType": "list",
+            "typeCode": "ALL_DAY",
+            "unit": null,
+            "children": null,
+            "show": true
+          },
+          {
+            "moduleId": 46,
+            "moduleName": "半小时站点运力排名",
+            "parentId": 44,
+            "moduleType": "list",
+            "typeCode": "HALF_HOUR",
+            "unit": null,
+            "children": null,
+            "show": true
+          }
+        ],
+        "show": true
+      },
+      {
+        "moduleId": 47,
+        "moduleName": "完成班次",
+        "parentId": 5,
+        "moduleType": "block",
+        "typeCode": null,
+        "unit": null,
+        "children": [
+          {
+            "moduleId": 48,
+            "moduleName": "早高峰完成班次",
+            "parentId": 47,
+            "moduleType": "target",
+            "typeCode": "233002",
+            "unit": "次",
+            "children": null,
+            "show": true
+          },
+          {
+            "moduleId": 49,
+            "moduleName": "晚高峰完成班次",
+            "parentId": 47,
+            "moduleType": "target",
+            "typeCode": "233003",
+            "unit": "次",
+            "children": null,
+            "show": true
+          }
+        ],
+        "show": true
+      },
+      {
+        "moduleId": 50,
+        "moduleName": "运营折线图",
+        "parentId": 5,
+        "moduleType": "block",
+        "typeCode": null,
+        "unit": null,
+        "children": [
+          {
+            "moduleId": 51,
+            "moduleName": "出车辆数",
+            "parentId": 50,
+            "moduleType": "line",
+            "typeCode": "230002",
+            "unit": null,
+            "children": null,
+            "show": true
+          },
+          {
+            "moduleId": 52,
+            "moduleName": "在线车辆数",
+            "parentId": 50,
+            "moduleType": "line",
+            "typeCode": "230001",
+            "unit": null,
+            "children": null,
+            "show": true
+          },
+          {
+            "moduleId": 53,
+            "moduleName": "营业总里程",
+            "parentId": 50,
+            "moduleType": "line",
+            "typeCode": "231001",
+            "unit": null,
+            "children": null,
+            "show": true
+          },
+          {
+            "moduleId": 54,
+            "moduleName": "班次总数",
+            "parentId": 50,
+            "moduleType": "line",
+            "typeCode": "233001",
+            "unit": null,
+            "children": null,
+            "show": true
+          }
+        ],
+        "show": true
+      }
+    ],
+    "show": true
+  },
+  {
+    "moduleId": 6,
+    "moduleName": "交易分析",
+    "parentId": 0,
+    "moduleType": "page",
+    "typeCode": null,
+    "unit": null,
+    "children": null,
+    "show": false
+  }
+],
+  "status": 200
+}
