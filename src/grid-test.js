@@ -1,4 +1,4 @@
-import { Grid } from 'canvas-2d'
+import { Grid } from 'canvas-mass/build/'
 
 const canvas = document.getElementById('demo')
 const ctx = canvas.getContext('2d')
@@ -85,6 +85,9 @@ const points1 = points.map(point => {
     }
   }
 })
+
+console.log(JSON.stringify(points0))
+console.log(JSON.stringify(points1))
 
 listenHotKey('d', ()=>{
   const points = getPoints()

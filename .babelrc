@@ -3,6 +3,8 @@
   "plugins": [
     ["transform-class-properties", {"spec": true}],
     "@babel/plugin-transform-runtime",
-    "@babel/plugin-transform-async-to-generator"
+    "@babel/plugin-transform-async-to-generator",
+    "@babel/plugin-syntax-class-properties",
+    "@babel/plugin-proposal-class-properties"
   ]
 }
