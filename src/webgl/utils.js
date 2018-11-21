@@ -14,11 +14,16 @@ function getRectBuffer(x, y, width, height) {
   ]
 }
 
+function getRandom256x() {
+  return (Math.random()) * 256 >> 0;
+}
+
 function getRandom2x() {
-  return Math.random() * 2 - 1;
+  return (Math.random() * 2 - 1) * 255 >> 0;
 }
 
 export {
   getRectBuffer,
-  getRandom2x
+  getRandom2x,
+  getRandom256x,
 }
