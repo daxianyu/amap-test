@@ -4,4 +4,5 @@ varying vec4 u_color_position;
 
 void main() {
     gl_Position = out_position;
+    v_positionOfColor = a_position;
 }

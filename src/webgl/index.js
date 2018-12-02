@@ -2,7 +2,7 @@ import v1 from './v1.glsl';
 import f1 from './f1.glsl';
 import {
   getRectBuffer,
-  getRandom2x
+  getRandom2x, getRandom256x
 } from "./utils";
 import dataJ from './data'
 import { createShader, createProgram } from './creator'
@@ -43,25 +43,24 @@ gl.enableVertexAttribArray(aPos);
 console.log(aColorPos)
 gl.enableVertexAttribArray(aColorPos)
 
-function setReadDataWay(gl) {
+function setReadDataWay(gl, posAttr, offset = 0) {
   const size = 2;
-  const type = gl.FLOAT;
+  const type = gl.UNSIGNED_BYTE;
   /* 是否归一化数据 */
-  const normalize = false;
+  const normalize = true;
   /* 移动单位 */
   const stride = 0;
-  const offset = 0;
   /**
    * 将属性绑定到当前的ARRAY_BUFFER。 换句话说就是属性绑定到了positionBuffer上。
    * 这也意味着现在利用绑定点随意将 ARRAY_BUFFER绑定到其它数据上后，
    * 该属性依然从positionBuffer上读取数据。
    * */
-  gl.vertexAttribPointer(aPos, size, type, normalize, stride, offset);
+  gl.vertexAttribPointer(posAttr, size, type, normalize, stride, offset);
 }
 setReadDataWay(gl);
 gl.vertexAttribPointer(aColorPos, 4, gl.FLOAT, false, 4 * 6, 6);
 
-const total = 10;
+const total = 100;
 function getData() {
   if(dataJ) {
     return new Float32Array(dataJ);
@@ -72,19 +71,17 @@ function getData() {
     const a = getRectBuffer(
       getRandom2x(),
       getRandom2x(),
-      getRandom2x(),
-      getRandom2x(),
+      2, 2
     );
     for(let j = 0;j < 12;j += 1) {
       data[i * 12 + j] = a[j];
       arr[i * 12 + j] = a[j];
     }
   }
-  return data;
+  return data
 }
 
 let dataBuffer = getData();
-/* 指定从缓冲中读取数据的方式 */
 gl.bufferData(gl.ARRAY_BUFFER, dataBuffer, gl.STATIC_DRAW);
 gl.uniform4f(uColor, 0.3, 0.3, 0.1, 0.8);
 console.time("1");
