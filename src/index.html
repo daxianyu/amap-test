@@ -33,8 +33,8 @@
 <!--<script src="https://unpkg.com/mathjs@5.1.2/dist/math.min.js"></script>-->
 <!--<div id="panel"></div>-->
 <div id="container" style="width: 100%;height: 100%; position: absolute;"></div>
-<script src="https://webapi.amap.com/maps?v=1.4.10&key=e15e343ed5f952efd7899005dc60900f&mapStyle=amap://styles/47cf2cc474c7ad6c92072f0b267adff0?isPublic=true"></script>
-<script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+<!--<script src="https://webapi.amap.com/maps?v=1.4.10&key=e15e343ed5f952efd7899005dc60900f&mapStyle=amap://styles/47cf2cc474c7ad6c92072f0b267adff0?isPublic=true"></script>-->
+<!--<script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>-->
 <!--<script type="text/javascript">-->
   <!--var map = new AMap.Map('container', {-->
     <!--resizeEnable: true,-->
@@ -67,27 +67,13 @@
 <!--</script>-->
 
 <div id="root"></div>
-<div style="height: 400px;width: 400px;position: fixed;background: white;top: 0;z-index: 99;right: 0">
-    <svg viewBox="0 0 100 100">
-        <circle id="cc" cx="50" cy="50" r="20" stroke="yellow" stroke-width="40" fill="none"
-                stroke-dasharray="40 260" transform="rotate(-90)" transform-origin="50px 50px 0px"/>
-
-        <!--<circle id="cc" cx="48" cy="52" r="20" stroke="red" stroke-width="40" fill="none"-->
-                <!--stroke-dasharray="80 260" transform="rotate(25)" transform-origin="50px 50px 0px"/>-->
-
-        <animateTransform
-                attributeName="transform" xlink:href="#cc"
-                attributeType="XML" type="rotate" from="-90" to="270"
-                dur="20s" begin="0s" repeatCount="indefinite"
-        />
-        <!--<animate attributeName="transform" xlink:href="#cc" from="rotate(-90)" to="rotate(270)" dur="3s" />-->
-        <!--<path d="M0 0 l50 50 v-30 Z" fill="none" stroke="red" stroke-width="2" fill="none"></path>-->
-        <!--<circle r="50" cx="50" cy="50" stroke-width="20" stroke="green" fill="none" stroke-dasharray="0 40" ></circle>-->
-    </svg>
-</div>
+<!--<div style="height: 100px;width: 100px;position: fixed;background: white;top: 0;z-index: 99;right: 0">-->
+    <!--<svg viewBox="0 0 100 100" id="pie">-->
+    <!--</svg>-->
+<!--</div>'-->
 <canvas id="demo" width="1024" height="1024"></canvas>
 <canvas style="margin-left: 383px;" id="demo1" width="1024" height="1024"></canvas>
-<script src="./webgl/index.js"></script>
+<!--<script src="./webgl/index.js"></script>-->
 <!--<script src="canvas1.js"></script>-->
 <!--<script src="./grid-test.js"></script>-->
 <!--<script src="index.js"></script>-->
@@ -95,5 +81,7 @@
 <!--<script src="norm.js"></script>-->
 <!--<script src="for-ui.js"></script>-->
 <!--<script src="./mapPath.js"></script>-->
+<!--<script src="./svg/index.js"></script>-->
+<script src="./webgl/texture.js"></script>
 </body>
 </html>

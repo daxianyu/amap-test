@@ -4,6 +4,8 @@ import {
   getRectBuffer,
   getRandom2x
 } from "./utils";
+import dataJ from './data'
+import { createShader, createProgram } from './creator'
 
 const data = new Float32Array([
   -0.5, -0.5,
@@ -20,50 +22,8 @@ if(!gl) {
   gl = canvas.getContext('webgl');
 }
 
-/**
- * @param {object} gl
- * @param {number} type
- * @param {string} source
- * @return { object } shader
- * */
-function createShader(gl, type, source) {
-  const shader = gl.createShader(type);
-  gl.shaderSource(shader, source);
-  gl.compileShader(shader);
-
-  const success = gl.getShaderParameter(shader, gl.COMPILE_STATUS)
-  if(success) {
-    return shader;
-  }
-
-  console.log(gl.getShaderInfoLog(shader))
-  gl.deleteShader(shader);
-}
-
 const vertexShader = createShader(gl, gl.VERTEX_SHADER, v1);
 const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, f1);
-
-/**
- * @param {object} gl
- * @param {object} vertexShader
- * @param {object} fragmentShader
- * @return { object } program
- * */
-function createProgram(gl, vertexShader, fragmentShader) {
-  const program = gl.createProgram();
-  gl.attachShader(program, vertexShader);
-  gl.attachShader(program, fragmentShader);
-  gl.linkProgram(program);
-
-  const success = gl.getProgramParameter(program, gl.LINK_STATUS);
-
-  if(success) {
-    return program
-  }
-  console.log(gl.getProgramInfoLog(program));
-  gl.deleteProgram(program);
-}
-
 const program = createProgram(gl, vertexShader, fragmentShader);
 
 /* 创建缓冲，数据从缓冲中获取 */
@@ -74,11 +34,14 @@ const positionBuffer = gl.createBuffer();
 gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
 
 const aPos = gl.getAttribLocation(program, 'out_position');
+const aColorPos = gl.getAttribLocation(program, 'a_color_position');
 const uColor = gl.getUniformLocation(program, 'u_color');
 
 /* 运行着色程序 */
 gl.useProgram(program);
 gl.enableVertexAttribArray(aPos);
+console.log(aColorPos)
+gl.enableVertexAttribArray(aColorPos)
 
 function setReadDataWay(gl) {
   const size = 2;
@@ -96,10 +59,15 @@ function setReadDataWay(gl) {
   gl.vertexAttribPointer(aPos, size, type, normalize, stride, offset);
 }
 setReadDataWay(gl);
+gl.vertexAttribPointer(aColorPos, 4, gl.FLOAT, false, 4 * 6, 6);
 
 const total = 10;
 function getData() {
+  if(dataJ) {
+    return new Float32Array(dataJ);
+  }
   const data = new Float32Array(total * 12);
+  const arr = []
   for (let i = 0; i < total; i += 1) {
     const a = getRectBuffer(
       getRandom2x(),
@@ -109,6 +77,7 @@ function getData() {
     );
     for(let j = 0;j < 12;j += 1) {
       data[i * 12 + j] = a[j];
+      arr[i * 12 + j] = a[j];
     }
   }
   return data;
@@ -117,8 +86,9 @@ function getData() {
 let dataBuffer = getData();
 /* 指定从缓冲中读取数据的方式 */
 gl.bufferData(gl.ARRAY_BUFFER, dataBuffer, gl.STATIC_DRAW);
-gl.uniform4f(uColor, 0.3, 0.3, 0.1, 0.1);
+gl.uniform4f(uColor, 0.3, 0.3, 0.1, 0.8);
 console.time("1");
-gl.drawArrays(gl.TRIANGLES, 0, total * 6);
+// gl.drawArrays(gl.TRIANGLES, 6, (total - 1) * 6);
+gl.drawArrays(gl.TRIANGLES, 0, 10);
 console.timeEnd("1");
 /**  **/
