@@ -1,7 +1,6 @@
 precision mediump float;
 uniform sampler2D u_image;
 varying vec2 v_texCoord;
-varying vec2 v_color;
 uniform float u_kernel[9];
 uniform float u_kernelWeight;
 
@@ -19,8 +18,6 @@ vec4 getMatrix(vec2 v_texCoord, float u_kernel[9]) {
 }
 
 void main() {
-//  gl_FragColor = vec4(v_color,0 , 1).rgra;
   vec4 colorSum = getMatrix(v_texCoord, u_kernel);
   gl_FragColor = vec4((colorSum / u_kernelWeight).rgb, 1);
-//   + vec4(v_color, 1, 1);
 }

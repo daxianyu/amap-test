@@ -14,6 +14,11 @@ if(!gl) {
 
 const program = assemblyProgram(gl, v, f);
 
+/**
+ * 1. create buffer
+ * 2. bind buffer to a point: ARRAY_BUFFER or ELEMENT_ARRAY_BUFFER
+ * 3. bind data to previous point
+ * */
 function bindAttribData(gl, program, attribute, bufferType, bufferData, usage = gl.STATIC_DRAW){
   const location = gl.getAttribLocation(program, attribute);
   const buffer = gl.createBuffer();
@@ -33,14 +38,13 @@ function bindAttribData(gl, program, attribute, bufferType, bufferData, usage = 
   }
 }
 
-function bindTexture(gl, image) {
+function createAndSetupTexture(gl) {
   const texture = gl.createTexture();
   gl.bindTexture(gl.TEXTURE_2D, texture);
-  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
   gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
   gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
-  gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
   return texture
 }
 
@@ -56,19 +60,12 @@ function render(image) {
   console.log(
     gl.getParameter(gl.MAX_TEXTURE_IMAGE_UNITS)
   );
-  /**
-   * 1. create buffer
-   * 2. bind buffer to a point: ARRAY_BUFFER or ELEMENT_ARRAY_BUFFER
-   * 3. bind data to previous point
-   * */
-  const rectData = setRectangle(0, 0, image.width, image.height);
-  const colorBuffer = bindAttribData(gl, program, 'a_color', gl.ARRAY_BUFFER, rectData);
-  colorBuffer.bindPointer(2, gl.FLOAT);
 
   const matrixLocation = gl.getAttribLocation(program, 'matrix');
   const kernelLocation = gl.getUniformLocation(program, "u_kernel[0]");
   const kernelWeightLocation = gl.getUniformLocation(program, "u_kernelWeight");
 
+  const rectData = setRectangle(0, 0, image.width, image.height);
   const positionBuffer = bindAttribData(gl, program, 'a_position', gl.ARRAY_BUFFER, rectData);
   positionBuffer.bindPointer(2, gl.FLOAT);
 
@@ -81,8 +78,10 @@ function render(image) {
     1.0,  1.0,
   ]));
 
+  /* Tell gl which attribute to bind to current buffer, and how to read data from it */
   texBuffer.bindPointer(2, gl.FLOAT);
-  bindTexture(gl, image);
+  createAndSetupTexture(gl);
+  gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
 
   gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
 
@@ -103,7 +102,7 @@ function render(image) {
   gl.uniform1f(kernelWeightLocation, computeKernelWeight(emboss));
   gl.vertexAttrib1f(matrixLocation, Math.sin(i));
   gl.drawArrays(gl.TRIANGLES, 0, 6);
-  return;
+  // return;
 
   let direction = -1;
   function draw() {
